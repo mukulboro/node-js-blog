@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
+    <title>Blog</title>
+    <link rel="stylesheet" href="blog-style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="pageTop"></div>
+    <%- include('partials/top_nav') -%>
+    
+    <h1>&#60;blog&#62;</h1>
+
+    <% posts.forEach((post)=>{ %>
+      <div class="content-holder">
+        <a href=<%= "/posts/"+post.kebabCaseURL %> ><div class="blog-image"
+           style="background-image: url(<%=post.imageURL%>);
+                  background-position: center;">
+                  <div class="blog-text">
+                    <% var subtitle = post.postBody.slice(0, 100)+"....." %>
+                    <h2><%=post.postTitle%></h2>
+                    <h3><%-subtitle%></h3>
+                  </div>
+        </div>
+        </a>
+      </div>
+
+   <% }) %>
+    
+   <h1>&#60;/blog&#62;</h1>
+      <%- include('partials/footer') -%>
+  </body>
+</html>
