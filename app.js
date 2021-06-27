@@ -1,7 +1,7 @@
 const express = require('express');
 const ld = require('lodash');
 
-const secretToken = "9861367984";
+const secretToken = "0000";
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/blogPostDB', {useNewUrlParser: true, useUnifiedTopology: true});
